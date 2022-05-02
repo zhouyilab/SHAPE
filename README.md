@@ -89,13 +89,13 @@ You can get `accuracy' and the 'accuracy' of zero-padded input for a specific mo
 ```bash
 $ python evaluate.py --model="Dynamic" --dataset= "T4sa"
 ```
+
 Then you can calculate the finaly Shape score through those ouput `accuracy`, following the description of our paper. 
 
-<br>
+
 To get  `in-class` and `out-class` version of the `Perceptual Score`:
 ```bash
 $ python evaluate_perceptual --model="Dynamic" --dataset="T4sa" --average_number=10 
-
 ```
 
 
