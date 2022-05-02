@@ -354,7 +354,7 @@ def run():
     val_data_iter = DataLoader(val_dataset,batch_size=model_config.batch_size,shuffle=False,num_workers=32,pin_memory=True)
     
 
-    device = torch.device('cuda:1')
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     net = get_model(model_config,train_dataset)
     net.to(device)
    
