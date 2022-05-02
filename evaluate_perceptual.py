@@ -203,7 +203,7 @@ def run():
             train_data_iter = DataLoader(train_dataset,batch_size=model_config.batch_size,shuffle=True,num_workers=32,pin_memory=True) #
             test_data_iter = DataLoader(test_dataset,batch_size=model_config.batch_size,shuffle=False,num_workers=32,pin_memory=True)
 
-            device = torch.device('cuda:1')
+            device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
             net = get_model(model_config,train_dataset).to(device)
             net.load_state_dict(torch.load(model_config.checkpoint)['state_dict'])
             
